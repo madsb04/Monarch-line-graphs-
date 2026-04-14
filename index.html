@@ -16,7 +16,22 @@
 <body>
   <div id="app">
     <v-app>
+      <v-app-bar-nav-icon @click="toggleOpenCloseopenDrawer"></v-app-bar-nav-icon>
+        <v-app-bar-title>Coding Inquiry Portfolio</v-app-bar-title>
+    </v-app-bar>
+    
     <v-main>
+
+              <v-container>
+            <!-- <v-btn @click="toggleOpenCloseopenDrawer">openDrawer</v-btn> -->
+
+            <v-navigation-drawer v-model="showopenDrawer">
+                <v-list-item href="https://madsb04.github.io/Coding-Inquiry-Portfolio/">Home</v-list-item>
+                <v-list-item v-for="item in projects" :key="item.title" :href="item.url">
+                    {{item.title}}
+                </v-list-item>
+            </v-navigation-drawer>
+
       <v-container>
 
 
@@ -42,6 +57,7 @@
 <v-data-table :items="RoostingPopulation"></v-data-table>
 
 </v-container>
+              </v-container>
 </v-main>
 </v-app>
 </div>
